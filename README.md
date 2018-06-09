@@ -6,6 +6,8 @@ This demo features a tweak I made to [addScript](https://stackoverflow.com/quest
 
 In `addAsset`, you'll be able to load a `css` or `js` file alike, and even have an influence on where should it be added.
 
+See a working demo in [this pen](https://codepen.io/vagui/pen/jKyOeP).
+
 ## The script
 
 In `addAsset` you'll only be required to add a _source_ (`src`), which is a path to your source file. Add your relative or absolute path to it and let this function figure out if it's a JS or CSS file.
