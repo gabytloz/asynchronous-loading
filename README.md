@@ -19,6 +19,25 @@ For CSS files it will add it before the first `<link>` tag, if there isn't one i
 For JS files it will add it before the first `<script>` tag, if there isn't one it will just add it as the last child of `<body>`.
 
 
+### Usage
+
+Get access to the script through the `dist` folder where you'll find
+`addAsset.js` and the minified version, `addAsset.min.js`. Copy and paste it in your project. If you have questions on how to implement, refer to the [demo](https://codepen.io/vagui/pen/jKyOeP).
+
+This is the structure of the function
+```
+  function addAsset( src, callback, addLast){
+    // Magic goes here...
+    // or look into dist folder
+  }
+```
+
+Paramethers are as follows:
+
+* `src` (`string`). A relative or absolute path to the `js` or `css` you are going to add.
+* `callback` (`function`). A function called after the asset is loaded successfully. Defaults to `undefined`, it's **optional**
+* `addLast` (`boolean`). Defines if you want to add your asset to the end of the relevant tag (`body` or `head`). Defaults to `undefined`, it's **optional**. 
+
 ### Adding a callback
 
 This script injects the asset when it's ready, if you want to perform an action, like initializing a dependant script, just add your `callback` function as the second parameter.
