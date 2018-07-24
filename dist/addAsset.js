@@ -1,39 +1,4 @@
-/* **************************************************
-  Working Example
-************************************************** */
-// Setups a script, waits for the script to load and then it inits the callback function
-function testAddingAssets() {
-  scriptSource = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
-  stylesheetSource= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css";
-
-  setTimeout(
-    function(){
-      addAsset(stylesheetSource, functionThatFiresWhenCSSIsLoaded);
-    }, 3000);
-
-  setTimeout(
-    function(){
-      addAsset(scriptSource, loadBootstrap);
-    }, 8000);
-}
-
-function loadBootstrap(){
-  scriptSource= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js";
-
-  console.log("My JQuery is ready");
-
-  addAsset(scriptSource, null, true);
-
-  console.log("All my JS is ready!");
-  document.querySelector('#jsTest').innerHTML = "<em>Bootstrap's JS loaded</em> Now you have a working carousel"
-
-}
-
-function functionThatFiresWhenCSSIsLoaded(){
-  console.log("My CSS is ready!");
-  document.querySelector('#cssTest').innerHTML = "<em>Bootstrap's CSS loaded</em> Now everything here is uppercase"
-  document.querySelector('#jsTest').innerHTML = "<em>Bootstrap's JS hasn't loaded yet</em> It should look better but it doesn't work"
-}
+// COPY THE FOLLOWING IN YOUR MAIN JS FILE TO USE addAsset
 
 /* *** Add Asset ******************************** */
 // Adds a script or CSS link tag to the DOM.
@@ -102,14 +67,3 @@ function addAsset( src, callback, addLast) {
     }
   }
 }
-
-
-/* **************************************************
-  Launch script if class exists
-************************************************** */
-// Load the scripts/styles only if you need them
-document.addEventListener("DOMContentLoaded",
-  function() {
-    if(document.querySelector('.carousel')) testAddingAssets();
-  }
-);
